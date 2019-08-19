@@ -1,0 +1,16 @@
+
+
+
+
+<%= form_for @barber do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :specialty %>:
+  <%= f.text_field :specialty %><br />
+
+  <%= f.label :hours %>:
+  <%= f.number_field :hours %><br />
+
+  <%= f.submit %>
+<% end %>

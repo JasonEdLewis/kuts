@@ -1,0 +1,23 @@
+<h1>This is the Kuts show page</h1>
+
+<p>
+ <strong>Barber</strong>: <%= link_to @appoint.barber.name, @appoint.barber %>
+
+</p>
+
+<p>
+ <strong>Client</strong>: <%=link_to @appoint.client.name,  @appoint.client%>
+
+</p>
+
+<p>
+ <strong>Location</strong>: <%=@appoint.barber.location %>
+
+</p>
+
+<br>
+
+ <strong>Time</strong>: <%= @appoint.time %> pm
+
+
+

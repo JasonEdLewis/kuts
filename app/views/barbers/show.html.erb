@@ -1,0 +1,39 @@
+<h1>This is the <%= @barber.name %>'s' Show Page</h1>
+
+
+
+Name:
+<p>
+<%= @barber.name %>
+</p>
+
+Gender:
+<p>
+<%= @barber.specialty %>
+</p>
+
+Style: 
+<p>
+<%= @barber.location %>
+
+</p>
+
+
+<%= button_to "edit", edit_barber_path(@barber), method: :get %>
+
+<%= button_to "Delete", @barber, method: :delete %>
+
+
+
+<h3>Here are your up coming appointments</h3>
+
+<% @barber.appoints.each do |appoint| %>
+
+<p>
+    <%= link_to appoint.client.name, appoint.client  %>   <%=appoint.time %>PM
+</p>
+
+<p>
+    <%= @barber.location  %>
+</p>
+<% end %>

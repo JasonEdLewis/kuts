@@ -1,0 +1,69 @@
+<h1> <%= @client.name %>  welcome to Your Dashboard</h1>
+
+Name:
+<p>
+<%= @client.name %>
+</p>
+
+Gender:
+<p>
+<%= @client.gender %>
+</p>
+
+Style: 
+<p>
+<%= @client.style %>
+
+</p>
+
+
+<%= button_to "edit", edit_client_path(@client), method: :get %>
+
+<%= button_to "Delete", @client, method: :delete %>
+
+
+
+
+<h3>Make an appointment here</h3>
+
+<%= form_for(@appoint) do |f| %>
+      
+ <%= f.hidden_field :client_id, value: @client.id%>
+
+
+
+ <%= f.label :Barber %> :       
+ <%= f.collection_select(:barber_id, Barber.all, :id , :name) %>
+ <%= f.label :time %> : 
+ <%= f.number_field :time , in: 1..7 %> : 
+
+ <%= f.label :style %> : 
+ <%= f.text_field :time %> : 
+
+ <%= f.submit "Book Appt" %>
+<% end %>
+
+
+<br>
+
+
+<h3>Here are your up coming appointments</h3>
+
+<% @client.appoints.each do |appoint| %>
+
+<p>
+    <%= link_to appoint.barber.name, appoint.barber  %>   <%=appoint.time %>PM
+</p>
+
+<p>
+    <%= appoint.barber.location  %>
+</p>
+
+<%= button_to "edit this appointment", edit_appoint_path(appoint), method: :get %>
+<%= button_to "Delete", appoint, method: :delete %>
+
+<% end %>
+
+
+
+

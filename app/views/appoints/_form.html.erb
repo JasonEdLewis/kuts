@@ -1,0 +1,20 @@
+
+
+<h3>Book your appointment here!!</h3>
+
+<%= form_for(@appoint) do |f| %>
+<%= f.label :Client %> :       
+ <%= f.collection_select(:client_id, Client.all, :id , :name) %>
+ <%= f.label :Barber %> :       
+ <%= f.collection_select(:barber_id, Barber.all, :id , :name) %>
+ <%= f.label :time %> : 
+ <%= f.number_field :time , in: 1..7 %> : 
+
+ <%= f.label :style %> : 
+ <%= f.text_field :time %> : 
+
+ <%= f.submit "Book Appt" %>
+<% end %>
+
+    
+  

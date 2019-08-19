@@ -1,0 +1,36 @@
+<h1>This Welcome To Kuts!!</h1>
+
+<div>
+
+<h3>Are you a barber or stylist looking for a new place to cut?</h3>
+
+ 
+<h3>Find a barber</h3>
+
+<%= form_tag ({controller: '/barbers',action: 'show', method: :get}) do%>
+<%= text_field_tag :search %>
+<%= submit_tag %>
+
+<% end %>
+
+<p>
+
+<%= render 'barbers/form' %>
+
+</p>
+
+</div>
+
+
+
+<div>
+<h3>Are You Looking for a new Stylist?</h3>
+ 
+<p>
+
+<%= render 'clients/form' %>
+
+</p>
+
+
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  barber: one
+  time: 1
+  style: MyString
+
+two:
+  client: two
+  barber: two
+  time: 1
+  style: MyString
