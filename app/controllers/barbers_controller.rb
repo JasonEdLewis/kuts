@@ -21,6 +21,7 @@ class BarbersController < ApplicationController
 
     def create
         @barber = Barber.create(barber_params)
+    
         redirect_to @barber
     end
 

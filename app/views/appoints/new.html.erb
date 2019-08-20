@@ -1,3 +1,7 @@
 <h1>BOOK YOUR APPOINTMENT HERE!!</h1>
 
+
+<% if flash[:error].each do |error| %>
+    <%= error %>
+<% end %>
 <%= render 'form' %>
