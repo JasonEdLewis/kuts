@@ -1,6 +1,6 @@
 
 
-<h3>Book your appointment here!!</h3>
+
 
 <%= form_for(@appoint) do |f| %>
 <%= f.label :Client %> :       
@@ -11,7 +11,7 @@
  <%= f.number_field :time , in: 1..7 %> : 
 
  <%= f.label :style %> : 
- <%= f.text_field :time %> : 
+ <%= f.text_field :style %> : 
 
  <%= f.submit "Book Appt" %>
 <% end %>

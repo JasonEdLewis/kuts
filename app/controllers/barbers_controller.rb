@@ -3,11 +3,16 @@ class BarbersController < ApplicationController
     before_action :find_barber, only: [:show, :edit, :update, :destroy]
 
     def index
-        @barbers = Barber.all
+        if params[:search]
+            @barbers = Barber.where("name like ?", "%#{params[:search]}%")
+        else
+            @barbers = Barber.all
+            
+        end
     end
 
     def show
-        
+        @appoint = Appoint.new
     end
 
     def new

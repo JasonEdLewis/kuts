@@ -1,0 +1,9 @@
+<h1>The Kuts line up</h1>
+
+<% @barbers.each do |barber| %>
+<p>
+<%= link_to barber.name, barber  %>
+
+</p>
+
+<% end %>

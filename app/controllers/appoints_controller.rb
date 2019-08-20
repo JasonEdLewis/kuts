@@ -6,10 +6,11 @@ class AppointsController < ApplicationController
         @appoints = Appoint.all
         @barber = Barber.new
         @client = Client.new
+        # @searched_barber = params[:search]
+        # redirect_to barber_path(@searched_barber.ids[0])
     end
 
     def show
-        @barber = Barber.find(params[:id])
         
     end
 
@@ -19,8 +20,13 @@ class AppointsController < ApplicationController
     end
 
     def create
+        id = params[:appoint][:barber_id]
+        barber_hours = Barber.find(id).hours -= 1
+        if  barber_hours <= 0
+            # :alert => "#{@barber.name} is all booked"
+        else
         @appoint = Appoint.create(appoint_params)
-    
+        end
         redirect_to client_path(params[:appoint][:client_id])
     end
 

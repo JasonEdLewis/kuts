@@ -2,18 +2,22 @@
 
 
 
-Name:
 <p>
+Name:
+
 <%= @barber.name %>
 </p>
 
-Gender:
 <p>
+
+Gender:
 <%= @barber.specialty %>
 </p>
 
-Style: 
 <p>
+
+Style: 
+
 <%= @barber.location %>
 
 </p>
@@ -23,7 +27,10 @@ Style:
 
 <%= button_to "Delete", @barber, method: :delete %>
 
-
+<br>
+<h3>Book your next appointment with <%= @barber.name %></h3>
+    <%= render 'appoints/form' %>
+<br>
 
 <h3>Here are your up coming appointments</h3>
 

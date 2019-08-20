@@ -7,11 +7,7 @@
  
 <h3>Find a barber</h3>
 
-<%= form_tag ({controller: '/barbers',action: 'show', method: :get}) do%>
-<%= text_field_tag :search %>
-<%= submit_tag %>
-
-<% end %>
+ <%= render 'barbers/find_barber' %>
 
 <p>
 
@@ -34,3 +30,8 @@
 
 
 </div>
+
+<h2>
+<%= link_to "Book an appointment here", new_appoint_path %>
+
+</h2>
