@@ -16,5 +16,15 @@
  <%= f.submit "Book Appt" %>
 <% end %>
 
+
+<p>
+    <%= button_to Home , '/appoints', method: :get %>
+</p>
+<% if flash[:error]
+        flash[:error].each do |error| %>
+            <%= error %>
+            <% end %>
+<% end %>
+
     
   

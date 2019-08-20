@@ -25,8 +25,10 @@ class AppointsController < ApplicationController
             redirect_to client_path(@appoint.client_id)
         else
         flash[:error] = @appoint.errors.full_messages
-        end
-        redirect_to client_path(params[:appoint][:client_id])
+        redirect_to new_appoint_path
+        
+    end
+        
     end
 
     def edit
